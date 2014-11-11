@@ -14,13 +14,13 @@ angular.module('starter.controllers', [])
             function(result) {
                 if (result.error == false) {
                     var d = new Date();
-                    console.log(result);
                     $scope.message = ' <div class = "list">' +
                         '<div class = "item ng-binding">' +
-                        '<strong> Prodcode &nbsp; </strong>' + result.data.st_prodcode + '</div> <div class = "item ng-binding" >' +
-                        '<strong> Description &nbsp; </strong>' + result.data.st_sdesc + '</div> < div class = "item ng-binding" >' +
-                        '<strong> List Price&nbsp; </strong>' + result.data.st_list + '</div> < div class = "item ng-binding" >' +
-                        '<strong> SOH &nbsp; </strong>' + result.data.st_soh + '</div> </div>'
+                        '<strong> Prodcode &nbsp; </strong>' + result.ST_Prodcode + '</div> <div class = "item ng-binding" >' +
+                        '<strong> Description &nbsp; </strong>' + result.ST_SDesc + '</div> < div class = "item ng-binding" >' +
+                        '<strong> UOM&nbsp; </strong>' + result.ST_Unit + '</div> < div class = "item ng-binding" >' +
+                        '<strong> List Price&nbsp; </strong>' + result.ST_List + '</div> < div class = "item ng-binding" >' +
+                        '<strong> SOH &nbsp; </strong>' + result.ST_SOH + '</div> </div>'
                 } else {
                     $scope.message = '<b>ERROR</b>: ' + result;
                 }
