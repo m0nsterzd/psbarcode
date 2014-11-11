@@ -12,7 +12,7 @@ angular.module('starter.services', [])
                     var barcode = parseInt(result.text);
                     $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
                     success(function(data, status, headers, config) {
-                        var record = data.rows[0].value;
+                        console.log(data);
                         deferred.resolve({
                             'error': false,
                             'result': data
