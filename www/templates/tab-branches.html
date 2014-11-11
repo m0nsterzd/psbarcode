@@ -1,0 +1,18 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Branches
+        <span ng-bind="syncstatus"></span>
+    </h1>
+    <button class="button button-icon" ng-click="toggleOnline()">
+        <i class="icon" ng-class="{'ion-connection-bars' : online, 'ion-alert-circled' : !online}"></i>
+    </button>
+</ion-header-bar>
+<ion-view hide-nav-bar="true">
+    <ion-content class="has-header padding">
+        <div class="list">
+
+            <div ng-repeat="branch in branches | filter:search" class="item" ng-click="branchSelect(branch)">
+                <strong>#&nbsp;{{branch.branch_code}}</strong>&nbsp;-&nbsp;{{branch.branch_name}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
