@@ -14,6 +14,7 @@ angular.module('starter.controllers', [])
             function(result) {
                 if (result.error == false) {
                     var d = new Date();
+                    console.log(result);
                     $scope.message = ' <div class = "list">' +
                         '<div class = "item ng-binding">' +
                         '<strong> Prodcode &nbsp; </strong>' + result.data.st_prodcode + '</div> <div class = "item ng-binding" >' +
