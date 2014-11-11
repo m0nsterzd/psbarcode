@@ -10,8 +10,7 @@ angular.module('starter.services', [])
             cordova.plugins.barcodeScanner.scan(
                 function(result) { // success
                     var barcode = parseInt(result.text);
-                    var code = '6996699007328';
-                    $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + code).
+                    $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
                     success(function(data, status, headers, config) {
                         var record = data.rows[0].value;
                         deferred.resolve({

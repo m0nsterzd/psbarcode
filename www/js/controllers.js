@@ -16,10 +16,10 @@ angular.module('starter.controllers', [])
                     var d = new Date();
                     $scope.message = ' <div class = "list">' +
                         '<div class = "item ng-binding">' +
-                        '<strong> Prodcode &nbsp; </strong>' + result.st_prodcode + '</div> <div class = "item ng-binding" >' +
-                        '<strong> Description &nbsp; </strong>' + result.st_sdesc + '</div> < div class = "item ng-binding" >' +
-                        '<strong> List Price&nbsp; </strong>' + result.st_list + '</div> < div class = "item ng-binding" >' +
-                        '<strong> SOH &nbsp; </strong>' + result.st_soh + '</div> </div>'
+                        '<strong> Prodcode &nbsp; </strong>' + result.data.st_prodcode + '</div> <div class = "item ng-binding" >' +
+                        '<strong> Description &nbsp; </strong>' + result.data.st_sdesc + '</div> < div class = "item ng-binding" >' +
+                        '<strong> List Price&nbsp; </strong>' + result.data.st_list + '</div> < div class = "item ng-binding" >' +
+                        '<strong> SOH &nbsp; </strong>' + result.data.st_soh + '</div> </div>'
                 } else {
                     $scope.message = '<b>ERROR</b>: ' + result;
                 }
