@@ -44,24 +44,35 @@ angular.module('starter', ['ionic',
     })
 
     // Each tab has its own nav history stack:
+    .state('tab.manual-scan', {
+        url: '/manual-scan',
+        views: {
+            'tab-manual-scan': {
+                templateUrl: 'templates/tab-manual-scan.html',
+                controller: 'ManualScanCtrl'
+            }
+        }
+    })
+
     .state('tab.scan', {
-            url: '/scan',
-            views: {
-                'tab-scan': {
-                    templateUrl: 'templates/tab-scan.html',
-                    controller: 'ScanCtrl'
-                }
+        url: '/scan',
+        views: {
+            'tab-scan': {
+                templateUrl: 'templates/tab-scan.html',
+                controller: 'ScanCtrl'
             }
-        })
-        .state('tab.branches', {
-            url: '/branches',
-            views: {
-                'tab-branches': {
-                    templateUrl: 'templates/tab-branches.html',
-                    controller: 'BranchesCtrl'
-                }
+        }
+    })
+
+    .state('tab.branches', {
+        url: '/branches',
+        views: {
+            'tab-branches': {
+                templateUrl: 'templates/tab-branches.html',
+                controller: 'BranchesCtrl'
             }
-        })
+        }
+    })
 
     .state('tab.about', {
         url: '/about',
