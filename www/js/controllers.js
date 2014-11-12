@@ -8,17 +8,18 @@ angular.module('starter.controllers', [])
     } else {
         alert("Sorry, your browser does not support Web Storage...");
     }
-    $scope.click = function(ean_code) {
-        $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + ean_code).
+    $scope.click = function(barcode) {
+        $scope.ean_code = '';
+        $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
         success(function(data, status, headers, config) {
-            console.log(data);
             $scope.message = ' <div class = "list">' +
                 '<div class = "item ng-binding">' +
                 '<strong> Prodcode &nbsp; </strong>' + data.ST_Prodcode + '</div> <div class = "item ng-binding" >' +
                 '<strong> Description &nbsp; </strong>' + data.ST_SDesc + '</div> < div class = "item ng-binding" >' +
                 '<strong> UOM&nbsp; </strong>' + data.ST_Unit + '</div> < div class = "item ng-binding" >' +
                 '<strong> List Price&nbsp; </strong>' + data.ST_List + '</div> < div class = "item ng-binding" >' +
-                '<strong> SOH &nbsp; </strong>' + data.ST_SOH + '</div> </div>'
+                '<strong> SOH &nbsp; </strong>' + data.ST_SOH + '</div> </div>';
+
         }).
         error(function(data, status, headers, config) {
             // log error
@@ -27,6 +28,7 @@ angular.module('starter.controllers', [])
 
     $scope.clear = function() {
         $scope.message = '';
+        $scope.ean_code = null;
     }
 })
 
