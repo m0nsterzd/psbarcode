@@ -98,7 +98,7 @@ angular.module('starter.controllers', [])
                     return false;
                 }
             }
-            $scope.sync = todoDb.replicate.from('http://192.168.100.220:5984/psmobile')
+            $scope.sync = todoDb.replicate.from('http://192.168.1.131:5984/psmobile')
                 .on('complete', function(info) {
                     alert('Replication complete');
                     get_branches();
@@ -154,3 +154,14 @@ angular.module('starter.controllers', [])
     }
 
 })
+
+.directive('selectOnClick', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.on('click', function() {
+                this.select();
+            });
+        }
+    };
+});
