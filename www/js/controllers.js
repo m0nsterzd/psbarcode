@@ -11,7 +11,8 @@ angular.module('starter.controllers', [])
     $scope.click = function(barcode) {
         $scope.ean_code = '';
         console.log(barcode);
-        $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
+        // $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
+        $http.get('http://localhost/positiv/index.php/products/get_ean/' + barcode).
         success(function(data, status, headers, config) {
             $scope.message = ' <div class = "list">' +
                 '<div class = "item ng-binding">' +
@@ -19,6 +20,7 @@ angular.module('starter.controllers', [])
                 '<strong> Description &nbsp; </strong>' + data.ST_SDesc + '</div> < div class = "item ng-binding" >' +
                 '<strong> UOM&nbsp; </strong>' + data.ST_Unit + '</div> < div class = "item ng-binding" >' +
                 '<strong> List Price&nbsp; </strong>' + data.ST_List + '</div> < div class = "item ng-binding" >' +
+                '<strong> Location&nbsp; </strong>' + data.ST_Bin + '</div> < div class = "item ng-binding" >' +
                 '<strong> SOH &nbsp; </strong>' + data.ST_SOH + '</div> </div>';
 
         }).
@@ -54,6 +56,7 @@ angular.module('starter.controllers', [])
                         '<strong> Description &nbsp; </strong>' + result.result.ST_SDesc + '</div> < div class = "item ng-binding" >' +
                         '<strong> UOM&nbsp; </strong>' + result.result.ST_Unit + '</div> < div class = "item ng-binding" >' +
                         '<strong> List Price&nbsp; </strong>' + result.result.ST_List + '</div> < div class = "item ng-binding" >' +
+                        '<strong> Location&nbsp; </strong>' + result.result.ST_Bin + '</div> < div class = "item ng-binding" >' +
                         '<strong> SOH &nbsp; </strong>' + result.result.ST_SOH + '</div> </div>'
                 } else {
                     $scope.message = '<b>ERROR</b>: ' + result;
