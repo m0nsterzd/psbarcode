@@ -11,8 +11,8 @@ angular.module('starter.controllers', [])
     $scope.click = function(barcode) {
         $scope.ean_code = '';
         console.log(barcode);
-        // $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
-        $http.get('http://localhost/positiv/index.php/products/get_ean/' + barcode).
+        $http.get('http://' + localStorage.getItem("server_ip") + '/positiv/index.php/products/get_ean/' + barcode).
+            // $http.get('http://localhost/positiv/index.php/products/get_ean/' + barcode).
         success(function(data, status, headers, config) {
             $scope.message = ' <div class = "list">' +
                 '<div class = "item ng-binding">' +
